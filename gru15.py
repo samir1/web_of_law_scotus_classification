@@ -150,7 +150,8 @@ def train_model():
                   optimizer='adam',
                   metrics=['acc'])
 
-    checkpointer = ModelCheckpoint(filepath="ModelCheckpoint/cnn15-{epoch:02d}-{val_acc:.2f}.hdf5",
+    checkpointer = ModelCheckpoint(filepath="ModelCheckpoint/" + os.path.basename(__file__)[:-3] +
+        "-{epoch:02d}-{val_acc:.2f}.hdf5",
                                    monitor='val_acc',
                                    verbose=2,
                                    save_best_only=True,
