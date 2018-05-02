@@ -10,7 +10,7 @@ from keras.preprocessing.sequence import pad_sequences
 from keras.utils import to_categorical
 from keras.layers import Dense, Input, GlobalMaxPooling1D
 from keras.layers import Conv1D, MaxPooling1D, Embedding
-from keras.layers import Dropout
+from keras.layers import Dropout, Flatten
 from keras.models import Model, Sequential
 from keras.callbacks import ModelCheckpoint, EarlyStopping
 from sklearn.model_selection import train_test_split
@@ -141,7 +141,7 @@ def train_model():
                 input_length=MAX_SEQUENCE_LENGTH,
                 trainable=False)
     )
-    mmodel.add(Conv1D(100, 3, activation='relu'))
+    model.add(Conv1D(100, 3, activation='relu'))
     model.add(MaxPooling1D(3))
     model.add(Conv1D(100, 4, activation='relu'))
     model.add(MaxPooling1D(4))
