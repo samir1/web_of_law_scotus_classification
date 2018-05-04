@@ -14,7 +14,6 @@ from keras.layers import Dropout, Flatten
 from keras.models import Model, Sequential
 from keras.callbacks import ModelCheckpoint, EarlyStopping
 from sklearn.model_selection import train_test_split
-import h5py
 from tensorflow.python.lib.io import file_io
 from time import gmtime, strftime
 import pickle
