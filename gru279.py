@@ -140,7 +140,6 @@ def train_model():
                 input_length=MAX_SEQUENCE_LENGTH,
                 trainable=False)
     )
-    model.add(Dropout(0.25))
     model.add(CuDNNGRU(128))
     model.add(Dropout(0.5))
     model.add(Dense(len(labels_index), activation='softmax'))
